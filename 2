@@ -1,0 +1,66 @@
+using System;
+
+class Program
+{
+    static void yasdonut(int age)
+    {
+        if (age >= 0 && age < 10)
+        {
+            Console.WriteLine("Arabanız yeni");
+        }
+        else if (age >= 10 && age < 20)
+        {
+            Console.WriteLine("Servise götürmeniz gerekebilir");
+        }
+        else if (age >= 20 && age < 31)
+        {
+            Console.WriteLine("Arabanız hurdaya çıkabilir");
+        }
+        else
+        {
+            Console.WriteLine("Ya hiç üretilmedi ya da trafikten men edilmiştir");
+        }
+    }
+
+    static void Main()
+    {
+        Console.WriteLine("Arabanın yaşını giriniz");
+        
+        int age = int.Parse(Console.ReadLine()); 
+        yasdonut(age);
+    }
+}
+
+
+
+//switch-case kullanımı zor olur günler aylar vs de daha iyi bir kullanım olabilir
+//belli bir aralık için case n when yapızını kullanabiliriz
+// alttaki gibi olabilir 
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Arabanız yeni");
+        int age = int.Parse(Console.ReadLine());
+
+        switch (age)
+        {
+            case int n when (n >= 0 && n < 10):
+                Console.WriteLine("Arabanız yeni");
+                break;
+            case int n when (n >= 10 && n < 20):
+                Console.WriteLine("Servise götürmeniz gerekebilir");
+                break;
+            case int n when (n >= 20 && n < 30):
+                Console.WriteLine("Arabanız hurdaya çıkabilir");
+                break;
+            
+            default:
+                Console.WriteLine("Ya hiç üretilmedi ya da trafikten men edilmiştir");
+                break;
+        }
+    }
+}
